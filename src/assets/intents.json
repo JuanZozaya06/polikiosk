@@ -1,0 +1,20 @@
+[
+  {
+    "intent": "denuncia_documentos_perdidos",
+    "keywords": ["documento perdido", "extravié", "cédula", "pasaporte"],
+    "response_tts": true,
+    "response": "Para reportar documentos extraviados, diríjase a la sede más cercana con una identificación alternativa. Horario: lunes a viernes de 8:00 a 16:00. En emergencia, llame al 911."
+  },
+  {
+    "intent": "transito_multas",
+    "keywords": ["multa", "tránsito", "comparendo", "infracción"],
+    "response_tts": true,
+    "response": "Para consultar multas, use el portal municipal o acuda a la Oficina de Tránsito en la Av. Principal. Horario: lunes a viernes de 9:00 a 15:00."
+  },
+  {
+    "intent": "objetos_perdidos",
+    "keywords": ["objeto perdido", "perdí", "extravié", "cartera"],
+    "response_tts": true,
+    "response": "Para objetos perdidos, verifique en la Oficina de Atención al Ciudadano. Lleve una descripción y, de ser posible, un comprobante de propiedad."
+  }
+]
