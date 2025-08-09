@@ -1,8 +1,9 @@
-<div class="screen">
-  <h2>Hable ahora</h2>
+<div class="wrap">
+  <div class="question-bubble">
+    <h2>Hable ahora</h2>
 
-  <!-- Selector de micrófono -->
-  <!-- <div
+    <!-- Selector de micrófono -->
+    <!-- <div
     style="margin: 8px 0 16px; display: flex; gap: 12px; align-items: center"
   >
     <label style="opacity: 0.8">Micrófono:</label>
@@ -15,36 +16,47 @@
     </select>
   </div> -->
 
-  <!-- Botón PTT -->
-  <div class="mic">
-    <button
-      class="primary"
+    <!-- Botón PTT -->
+    <div
+      class="mic"
       (mousedown)="startListening()"
       (mouseup)="stopListening()"
       (touchstart)="startListening()"
       (touchend)="stopListening()"
       [class.active]="listening"
     >
-      Mantenga presionado y hable
-    </button>
-  </div>
+      <img src="mic.png" alt="" />
+    </div>
 
-  <!-- Texto (editable) -->
-  <!-- <textarea
+    <!-- Texto (editable) -->
+    <!-- <textarea
     [(ngModel)]="session.state.transcript"
     rows="6"
     placeholder="O escriba su pregunta..."
   ></textarea> -->
 
-  <!-- Mensajes -->
-  <div class="interim" *ngIf="listening">Escuchando…</div>
-  <div class="interim" *ngIf="errorMsg" style="color: #f87171">
-    {{ errorMsg }}
-  </div>
+    <!-- Mensajes -->
+    <div class="interim" *ngIf="!listening && !errorMsg">
+      (Mantén pulsado para hablar)
+    </div>
+    <div class="interim" *ngIf="listening">Escuchando…</div>
+    <div class="interim" *ngIf="errorMsg" style="color: #f44336">
+      {{ errorMsg }}
+    </div>
 
-  <div class="actions">
-    <button routerLink="/">Cancelar</button>
+    <div class="actions">
+      <button routerLink="/">Cancelar</button>
+    </div>
+
+    <div class="bubble-1"></div>
+    <div class="bubble-2"></div>
+    <div class="bubble-3"></div>
   </div>
+  <div class="policeman-container">
+    <img src="base.png" alt="Policía de Chacao" class="policeman" />
+  </div>
+  <img src="bg.png" class="bg" />
+  <div class="frame"></div>
 </div>
 
 <!-- <div *ngIf="previewUrl" style="margin: 12px 0">

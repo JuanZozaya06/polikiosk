@@ -1,16 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
 :root {
-  --bg: #0f172a;
+  --bg: #e4e8ba;
   --card: #111827;
   --fg: #e5e7eb;
-  --accent: #22d3ee;
+  --accent: #323d58;
 }
 * {
   box-sizing: border-box;
+  font-family: "Source Sans 3";
 }
 html,
 body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 body {
   background: var(--bg);
@@ -27,7 +31,7 @@ button {
 }
 button.primary {
   background: var(--accent);
-  color: #0b1020;
+  color: white;
   font-weight: 700;
 }
 .screen {
@@ -53,7 +57,6 @@ textarea {
   color: var(--fg);
 }
 .interim {
-  opacity: 0.7;
   margin-top: 8px;
   min-height: 24px;
 }
@@ -81,4 +84,101 @@ textarea {
   to {
     transform: rotate(360deg);
   }
+}
+* {
+  color: #333;
+}
+.bg {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
+  /* width: 100%; */
+  height: 300px;
+  min-width: 300px;
+  left: 0;
+}
+.frame {
+  position: absolute;
+  height: calc(100vh - 16px);
+  width: calc(100vw - 16px);
+  border: 4px solid rgb(45 53 73 / 45%);
+  top: 8px;
+  left: 8px;
+  border-radius: 16px;
+  z-index: -1;
+}
+.policeman-container {
+  margin-top: auto;
+  height: fit-content;
+  position: relative;
+  width: 300px;
+  max-width: 75dvw;
+  max-height: 50dvh;
+  min-height: 50dvh;
+  height: 50dvh;
+}
+.policeman {
+  width: 300px;
+  max-width: 75dvw;
+  max-height: 50dvh;
+  min-height: 50dvh;
+  height: 50dvh;
+  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.question-bubble {
+  padding: 16px;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #919787;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin-top: auto;
+  z-index: 2;
+}
+.bubble-1 {
+  height: 32px;
+  width: 32px;
+  bottom: -40px;
+  position: absolute;
+  left: 0;
+  right: 80px;
+  margin: auto;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #919787;
+}
+.bubble-2 {
+  height: 24px;
+  width: 24px;
+  bottom: -72px;
+  position: absolute;
+  left: 0;
+  right: 64px;
+  margin: auto;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #919787;
+}
+.bubble-3 {
+  height: 12px;
+  width: 12px;
+  bottom: -96px;
+  position: absolute;
+  left: 0;
+  right: 40px;
+  margin: auto;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #919787;
 }

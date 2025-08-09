@@ -15,7 +15,7 @@ import {
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './ask.component.html',
-  styleUrls: ['./ask.component.css'],
+  styleUrls: ['./ask.component.scss'],
 })
 export class AskComponent implements OnInit, OnDestroy {
   listening = false;
@@ -105,7 +105,7 @@ export class AskComponent implements OnInit, OnDestroy {
       console.log('✅ transcripción:', this.session.state.transcript);
       if (!this.session.state.transcript) {
         this.errorMsg =
-          'No se entendió audio (muy corto o silencioso). Intente de nuevo.';
+          'No se entendió el audio (muy corto o silencioso). Intente de nuevo.';
       } else {
         this.proceed();
       }

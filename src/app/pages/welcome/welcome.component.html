@@ -1,22 +1,35 @@
 <div class="wrap">
   <img src="polichacao.ico" alt="Policía de Chacao" class="logo" />
-  <h1>¿En qué puedo ayudarte?</h1>
+  <div class="welcome-title">¿En qué puedo ayudarte?</div>
   <div class="btns">
     <button class="primary" routerLink="/ask">Hacer una pregunta</button>
     <div class="chips">
-      <button routerLink="/ask" [queryParams]="{ prefill: 'perdí mi cédula' }">
+      <button
+        routerLink="/ask"
+        class="chip"
+        [queryParams]="{ prefill: 'perdí mi cédula' }"
+      >
         Documentos perdidos
       </button>
       <button
         routerLink="/ask"
+        class="chip"
         [queryParams]="{ prefill: 'tengo una multa de tránsito' }"
       >
         Multas de tránsito
       </button>
-      <button routerLink="/ask" [queryParams]="{ prefill: 'denunciar hurto' }">
+      <button
+        routerLink="/ask"
+        class="chip"
+        [queryParams]="{ prefill: 'denunciar hurto' }"
+      >
         ¿Cómo denunciar?
       </button>
     </div>
   </div>
-  <p class="note">En emergencia llame al 911 o 0212-XXX-XXXX</p>
+  <div class="policeman-container">
+    <img src="base.png" alt="Policía de Chacao" class="policeman" />
+  </div>
+  <img src="bg.png" class="bg" />
+  <div class="frame"></div>
 </div>
