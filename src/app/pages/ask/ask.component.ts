@@ -119,6 +119,7 @@ export class AskComponent implements OnInit, OnDestroy {
     } catch (e) {
       console.error('Transcribe error:', e);
       this.errorMsg = 'Error al transcribir audio.';
+      this.loading = false;
     }
   }
 
