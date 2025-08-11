@@ -1,9 +1,16 @@
-<div class="screen">
-  <h2>Respuesta</h2>
+<div class="wrap">
+  <!-- <h2>Preguntaste:</h2>
+  <div class="question">{{ session.state.transcript }}</div> -->
+  <h2>Respuesta:</h2>
   <div class="answer">{{ session.state.answer }}</div>
   <div class="actions">
     <button (click)="repeat()">Repetir audio</button>
     <button (click)="newQuestion()">Nueva pregunta</button>
   </div>
   <p class="note">En emergencia llame al 911 o 0212-XXX-XXXX</p>
+
+  <div class="policeman-container just-container"></div>
+
+  <img src="bg.png" class="bg" />
+  <div class="frame"></div>
 </div>

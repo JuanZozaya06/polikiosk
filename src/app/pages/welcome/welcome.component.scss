@@ -3,11 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100dvh;
   gap: 24px;
   text-align: center;
-  padding-top: 10dvh;
+  padding-top: 10vh;
   position: relative;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 .logo {
@@ -42,30 +43,6 @@
   opacity: 0.7;
 }
 
-.policeman-container {
-  margin-top: auto;
-  height: fit-content;
-  position: relative;
-  width: 300px;
-  max-width: 75dvw;
-  max-height: 50dvh;
-  min-height: 50dvh;
-  height: 50dvh;
-
-  .policeman {
-    width: 300px;
-    max-width: 75dvw;
-    max-height: 50dvh;
-    min-height: 50dvh;
-    height: 50dvh;
-    object-fit: contain;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-}
 .btns {
   display: flex;
   flex-direction: column;

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
 :root {
-  --bg: #e4e8ba;
+  --bg: #b8cbcd;
   --card: #111827;
   --fg: #e5e7eb;
   --accent: #323d58;
@@ -41,7 +41,7 @@ button.primary {
 }
 .screen.center {
   display: flex;
-  height: 100dvh;
+  height: 100vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -93,10 +93,9 @@ textarea {
   bottom: 0;
   z-index: -1;
   opacity: 0.5;
-  /* width: 100%; */
-  height: 300px;
-  min-width: 300px;
+  min-width: 100%;
   left: 0;
+  backdrop-filter: blur(1px);
 }
 .frame {
   position: absolute;
@@ -109,21 +108,36 @@ textarea {
   z-index: -1;
 }
 .policeman-container {
+  height: fit-content;
+  width: 300px;
+  max-width: 75dvw;
+  max-height: 50vh;
+  min-height: 50vh;
+  height: 50vh;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.just-container {
   margin-top: auto;
   height: fit-content;
   position: relative;
   width: 300px;
   max-width: 75dvw;
-  max-height: 50dvh;
-  min-height: 50dvh;
-  height: 50dvh;
+  max-height: 50vh;
+  min-height: 50vh;
+  height: 50vh;
 }
 .policeman {
   width: 300px;
   max-width: 75dvw;
-  max-height: 50dvh;
-  min-height: 50dvh;
-  height: 50dvh;
+  max-height: 50vh;
+  min-height: 50vh;
+  height: 50vh;
   object-fit: contain;
   position: absolute;
   bottom: 0;

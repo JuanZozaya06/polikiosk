@@ -18,6 +18,7 @@ import {
   styleUrls: ['./ask.component.scss'],
 })
 export class AskComponent implements OnInit, OnDestroy {
+  loading = false;
   listening = false;
   interim = '';
   errorMsg = '';
@@ -66,17 +67,21 @@ export class AskComponent implements OnInit, OnDestroy {
 
   // PTT
   async startListening() {
-    this.errorMsg = '';
-    this.listening = true;
-    this.session.state.transcript = '';
-    this.interim = '';
-    try {
-      await this.rec.start();
-      console.log('🎤 grabando… (mantén presionado)');
-    } catch (e: any) {
-      console.error('Mic error:', e);
-      this.errorMsg = 'No se pudo acceder al micrófono.';
-      this.listening = false;
+    if (!this.listening && !this.loading) {
+      this.errorMsg = '';
+      this.listening = true;
+      this.session.state.transcript = '';
+      this.interim = '';
+      try {
+        await this.rec.start();
+        console.log('🎤 grabando… (mantén presionado)');
+      } catch (e: any) {
+        console.error('Mic error:', e);
+        this.errorMsg = 'No se pudo acceder al micrófono.';
+        this.listening = false;
+      }
+    } else {
+      this.stopListening();
     }
   }
 
@@ -98,10 +103,12 @@ export class AskComponent implements OnInit, OnDestroy {
       // envía al backend como ya lo hacías
       const form = new FormData();
       form.append('file', blob, 'audio.webm');
+      this.loading = true;
       const resp = await this.http
         .post<{ text: string }>(`${environment.apiBase}/transcribe`, form)
         .toPromise();
       this.session.state.transcript = resp?.text || '';
+      this.loading = false;
       console.log('✅ transcripción:', this.session.state.transcript);
       if (!this.session.state.transcript) {
         this.errorMsg =

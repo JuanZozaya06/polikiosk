@@ -61,11 +61,12 @@ export class RecorderService {
   }
 
   async stop(): Promise<Blob> {
-    if (!this.rec) throw new Error('Not recording');
+    if (!this.rec) {
+      return new Blob([], { type: 'audio/webm' }); // no lances error
+    }
     return new Promise<Blob>((resolve) => {
       this.rec!.onstop = () => {
         const blob = new Blob(this.chunks, { type: 'audio/webm' });
-        console.log('🎧 blob:', blob.type, 'size:', blob.size, 'bytes');
         this.stopStreamOnly();
         resolve(blob);
       };

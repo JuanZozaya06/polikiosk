@@ -1,6 +1,8 @@
 <div class="wrap">
   <div class="question-bubble">
-    <h2>Hable ahora</h2>
+    <h2 *ngIf="loading">Por favor espere</h2>
+    <h2 *ngIf="!listening && !loading">Presione para hablar</h2>
+    <h2 *ngIf="listening && !loading">Hable ahora</h2>
 
     <!-- Selector de micrófono -->
     <!-- <div
@@ -19,12 +21,14 @@
     <!-- Botón PTT -->
     <div
       class="mic"
-      (mousedown)="startListening()"
+      [class.active]="listening"
+      [class.disabled]="loading"
+      (click)="startListening()"
+    >
+      <!-- (mousedown)="startListening()"
       (mouseup)="stopListening()"
       (touchstart)="startListening()"
-      (touchend)="stopListening()"
-      [class.active]="listening"
-    >
+      (touchend)="stopListening()" -->
       <img src="mic.png" alt="" />
     </div>
 
@@ -36,9 +40,7 @@
   ></textarea> -->
 
     <!-- Mensajes -->
-    <div class="interim" *ngIf="!listening && !errorMsg">
-      (Mantén pulsado para hablar)
-    </div>
+    <div class="interim" *ngIf="loading">Interpretando tu voz…</div>
     <div class="interim" *ngIf="listening">Escuchando…</div>
     <div class="interim" *ngIf="errorMsg" style="color: #f44336">
       {{ errorMsg }}
@@ -48,13 +50,12 @@
       <button routerLink="/">Cancelar</button>
     </div>
 
-    <div class="bubble-1"></div>
+    <!--  <div class="bubble-1"></div>
     <div class="bubble-2"></div>
-    <div class="bubble-3"></div>
+    <div class="bubble-3"></div> -->
   </div>
-  <div class="policeman-container">
-    <img src="base.png" alt="Policía de Chacao" class="policeman" />
-  </div>
+
+  <div class="policeman-container just-container"></div>
   <img src="bg.png" class="bg" />
   <div class="frame"></div>
 </div>

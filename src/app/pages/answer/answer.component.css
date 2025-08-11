@@ -1,0 +1,16 @@
+.answer {
+  color: white;
+  font-size: 20px;
+}
+.wrap {
+  padding: 40px;
+  height: 100vh;
+  max-height: 100vh;
+}
+.question {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  font-size: 20px;
+  line-height: 1.4;
+}

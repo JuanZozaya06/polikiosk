@@ -20,10 +20,16 @@ export class AnswerComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.session.touch();
-    this.tts.speak(this.session.state.answer);
+    this.tts.speak(this.session.state.answer, {
+      lang: 'es-MX',
+      voiceName: 'es-US-Studio-B',
+    });
   }
   repeat() {
-    this.tts.speak(this.session.state.answer);
+    this.tts.speak(this.session.state.answer, {
+      lang: 'es-MX',
+      voiceName: 'es-US-Studio-B',
+    });
   }
   newQuestion() {
     this.tts.stop();
