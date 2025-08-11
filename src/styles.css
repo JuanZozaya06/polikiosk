@@ -128,16 +128,16 @@ textarea {
   position: relative;
   width: 300px;
   max-width: 75dvw;
-  max-height: 50vh;
-  min-height: 50vh;
-  height: 50vh;
+  max-height: 40vh;
+  min-height: 40vh;
+  height: 40vh;
 }
 .policeman {
   width: 300px;
   max-width: 75dvw;
-  max-height: 50vh;
-  min-height: 50vh;
-  height: 50vh;
+  max-height: 40vh;
+  min-height: 40vh;
+  height: 40vh;
   object-fit: contain;
   position: absolute;
   bottom: 0;
